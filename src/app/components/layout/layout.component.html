@@ -1,0 +1,33 @@
+<div class="layout">
+	<header>header</header>
+	<div class="content">
+		<h1>
+			{{state.myTitle}}
+		</h1>
+		This is the content.
+		
+		<h2>
+			<button (click)="state.increment()">+</button>
+			counter: {{state.counter}}
+		</h2>
+		
+		<h2>
+<!--			//template reference variable-->
+			<input #fruit_name placeholder="type a fruit">
+			<button (click)="state.fruits.push(fruit_name.value)"> add </button>
+		
+			<ul>
+				<li *ngFor="let fruit of state.fruits"> {{fruit}}</li>
+			</ul>
+		</h2>
+		
+		
+		<div class="comps-abc">
+			<app-comp-a></app-comp-a>
+			<app-comp-b></app-comp-b>
+			<app-comp-c></app-comp-c>
+		</div>
+	
+	</div>
+	<footer>footer</footer>
+</div>

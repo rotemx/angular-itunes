@@ -1,0 +1,60 @@
+body {
+    /* background: #c6d1ff; */
+    margin: 0;
+    display: flex;
+}
+
+html, body, app-layout {
+    height: 100%;
+    /* border: 1px solid red; */
+    flex: 1;
+    display: flex;
+}
+
+* {
+    box-sizing: border-box;
+}
+
+.layout {
+    flex: 1;
+    border: 1px solid green;
+    display: flex;
+    flex-direction: column;
+}
+
+header {
+    height: 70px;
+    background: gray;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    color: white;
+}
+
+.content {
+    flex: 1;
+}
+
+footer {
+    height: 50px;
+    background: bisque;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.comps-abc {
+    border-radius: 10px;
+    display: flex;
+    border: 1px solid;
+    justify-content: space-around;
+    margin: 50px;
+}
+
+.comps-abc > * {
+    border: 2px solid cornflowerblue;
+    background: cornflowerblue;
+    margin: 20px;
+    border-radius: 10px;
+    box-shadow: 5px 5px 5px gray;
+}

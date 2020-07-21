@@ -1,17 +1,19 @@
-import {Component}        from '@angular/core';
-import {ApiService, Song} from "./services/api.service";
+import {Component, OnInit} from '@angular/core';
+import {ApiService, Song}  from "./services/api.service";
 
 @Component({
 	selector   : 'app-root',
 	templateUrl: './app.component.html',
 	styleUrls  : ['./app.component.css']
 })
-export class AppComponent {
+export class AppComponent implements OnInit{
 	
 	songs:Song[] = []
 	
 	// DI
 	constructor(private apiService: ApiService) {
+		window['appComponent'] = window['appComponent'] || [];
+		window['appComponent'].push(this)
 	}
 	
 	title = 'MyFirstAngularProject';
@@ -24,6 +26,7 @@ export class AppComponent {
 	ngOnInit(){  // Lifecycle hook
 		this.songs = this.apiService.getSongs()
 	}
+	
 	onPlay(event:string){
 		alert(event + ' Has been played!')
 	}
